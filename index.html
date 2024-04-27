@@ -11,6 +11,56 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+            .map-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .map-item {
+                position: relative;
+            }
+
+            .map-item img {
+                width: 100%;
+                display: block;
+                border: 3px solid #fff; /* Add a white border */
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .map-item:hover img {
+                transform: scale(1.05); /* Scale up on hover */
+            }
+
+            .map-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            .map-item:hover .map-overlay {
+                opacity: 1; /* Show overlay on hover */
+            }
+
+            .map-overlay h3,
+            .map-overlay p {
+                margin: 0;
+                padding: 10px;
+                text-align: center;
+            }
+        </style>
 	</head>
 	<body class="is-preload">
 
